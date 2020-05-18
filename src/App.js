@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Rock from './icons/Rock';
-import Paper from './icons/Paper';
-import Scissors from './icons/Scissors';
 import './App.css';
 
 const choices = [
-  { id: 1, name: 'rock', component: Rock },
-  { id: 2, name: 'paper', component: Paper },
-  { id: 3, name: 'scissors', component: Scissors }
+  { id: 1, name: 'rock' },
+  { id: 2, name: 'paper' },
+  { id: 3, name: 'scissors' }
 ];
 
 function App() {
@@ -49,15 +46,9 @@ function App() {
         <div>Computer</div>
 
         <div>
-          <button className="rock" onClick={() => handleUserChoice(1)}>
-            <Rock />
-          </button>
-          <button className="paper" onClick={() => handleUserChoice(2)}>
-            <Paper />
-          </button>
-          <button className="scissors" onClick={() => handleUserChoice(3)}>
-            <Scissors />
-          </button>
+          <button className="rock" onClick={() => handleUserChoice(1)}></button>
+          <button className="paper" onClick={() => handleUserChoice(2)}></button>
+          <button className="scissors" onClick={() => handleUserChoice(3)}></button>
         </div>
 
         <div className="vs">vs</div>

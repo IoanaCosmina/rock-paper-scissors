@@ -116,18 +116,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .choices .rock {
     background: #FFE74C;
+    background-image: url('./icons/rock.png');
+    background-size: 140px;
+    background-repeat: no-repeat;
+    background-position: 18px;
 }
 
 .choices .paper {
     background: #89B27A;
+    background-image: url('./icons/paper.png');
+    background-size: 140px;
+    background-repeat: no-repeat;
+    background-position: 20px;
 }
 
 .choices .scissors {
     background: #99B7C1;
+    background-image: url('./icons/scissors.png');
+    background-size: 140px;
+    background-repeat: no-repeat;
+    background-position: 22px;
 }
 
 .choices .computer-choice {
     background: #2C95CE;
     color: #F5FBEF;
     font-size: 65px;
+}
+
+.choices button object {
+    pointer-events: bounding-box;
 }
