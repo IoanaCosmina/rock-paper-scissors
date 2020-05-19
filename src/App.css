@@ -1,210 +1,218 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .app {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background: #F5FBEF;
-    color: #011638;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #f5fbef;
+  color: #011638;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Varela Round', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Varela Round", sans-serif;
 }
 
 .info {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .info h2 {
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .wins-losses {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1;
 }
 
-.wins, .losses {
-    display: flex;
-    align-items: center;
+.wins,
+.losses {
+  display: flex;
+  align-items: center;
 }
 
-.wins .number, .losses .number {
-    font-size: 52px;
-    margin-right: 5px;
+.wins .number,
+.losses .number {
+  font-size: 52px;
+  margin-right: 5px;
 }
 
 .wins {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .wins .number {
-    color: #5dc674;
+  color: #5dc674;
 }
 
 .losses .number {
-    color: #da516f;
+  color: #da516f;
 }
 
 .choices {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    row-gap: 30px;
-    column-gap: 50px;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 28px;
-    color: #48ACF0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  row-gap: 30px;
+  column-gap: 50px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 28px;
+  color: #48acf0;
 }
 
-.choices>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.choices > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .vs {
-    font-size: 100px;
-    opacity: 0.3;
-    transform: rotate(-0.1turn);
-    pointer-events: none;
+  font-size: 100px;
+  opacity: 0.3;
+  transform: rotate(-0.1turn);
+  pointer-events: none;
 }
 
 .choices button {
-    cursor: pointer;
-    margin-bottom: 25px;
-    padding: 20px;
-    background: #fff;
-    outline: none;
-    border: none;
-    border-radius: 50%;
-    height: 175px;
-    width: 175px;
-    transition: 0.1s ease all;
+  cursor: pointer;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #fff;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  height: 175px;
+  width: 175px;
+  transition: 0.1s ease all;
 }
 
 .choices button:hover {
-    transform: scale(1.07);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.07);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .choices img {
-    width: 140px;
+  width: 140px;
 }
 
 .choices .rock {
-    background: #FFE74C;
+  background: #ffe74c;
 }
 
 .choices .paper {
-    background: #89B27A;
+  background: #89b27a;
 }
 
 .choices .scissors {
-    background: #99B7C1;
+  background: #99b7c1;
 }
 
 .choices .computer-choice {
-    background: #2C95CE;
-    color: #F5FBEF;
-    font-size: 65px;
+  background: #2c95ce;
+  color: #f5fbef;
+  font-size: 65px;
 }
 
 .game-state {
-    background: rgba(130, 108, 127, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    line-height: 1.3;
-    font-family: 'Varela Round', sans-serif;
+  background: rgba(130, 108, 127, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1.3;
+  font-family: "Varela Round", sans-serif;
 }
 
-.game-state.win>div {
-    background: #70F8BA;
-    color: #4D3C6A;
+.game-state.win > div {
+  background: #70f8ba;
+  color: #4d3c6a;
 }
 
-.game-state.draw>div {
-    background: #392759;
-    color: #F5FBEF;
+.game-state.draw > div {
+  background: #392759;
+  color: #f5fbef;
 }
 
-.game-state.lose>div {
-    background: #E2384A;
-    color: #F8A09A;
+.game-state.lose > div {
+  background: #e2384a;
+  color: #f8a09a;
 }
 
-.game-state>div {
-    width: 60%;
-    text-align: center;
-    padding: 0 40px;
-    border-radius: 10px;
-    z-index: 1;
-    color: #fff;
-    font-size: 60px;
+.game-state > div {
+  width: 60%;
+  text-align: center;
+  padding: 0 40px;
+  border-radius: 10px;
+  z-index: 1;
+  color: #fff;
+  font-size: 60px;
 }
 
 .game-state-content {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .game-state-content p {
-    margin: 40px 15px 30px 0;
-    display: flex;
-    align-items: center;
+  margin: 40px 30px 30px 0;
+  display: flex;
+  align-items: center;
 }
 
 .game-state-content p:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .game-state-content img {
-    width: 140px;
+  width: 140px;
 }
 
 .game-state button {
-    margin-bottom: -5%;
-    width: 100%;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    padding: 25px;
-    font-size: 30px;
-    cursor: pointer;
-    flex-shrink: 1;
-    background: #FDFFFC;
-    color: #392759;
+  margin-bottom: -5%;
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  flex-shrink: 1;
+  background: #fdfffc;
+  color: #392759;
 }
