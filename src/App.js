@@ -27,15 +27,23 @@ function App() {
     const currentChoice = choices.find(c => c.id === choice);
     setUserChoice(currentChoice);
 
-    if (currentChoice.losesTo === computerChoice.id) {
-      setLosses(losses => losses + 1);
-      setGameState('lose');
-    } else if (computerChoice.losesTo === currentChoice.id) {
-      setWins(wins => wins + 1);
-      setGameState('win');
-    } else if (computerChoice.id === currentChoice.id) {
+    if (computerChoice.id === currentChoice.id) {
       setGameState('draw');
     }
+
+    currentChoice.losesTo.forEach((item) => {
+      if (item === computerChoice.id) {
+        setLosses(losses => losses + 1);
+        setGameState('lose');
+      }
+    })
+
+    computerChoice.losesTo.forEach((item) => {
+      if (currentChoice.id === item) {
+        setWins(wins => wins + 1);
+        setGameState('win');
+      }
+    })
   };
 
   function renderComponent(choice) {

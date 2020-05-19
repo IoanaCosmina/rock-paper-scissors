@@ -2,6 +2,8 @@ import React from 'react';
 import Rock from '../icons/Rock';
 import Paper from '../icons/Paper';
 import Scissors from '../icons/Scissors';
+import Lizard from '../icons/Lizard';
+import Spock from '../icons/Spock';
 
 const Choices = (props) => {
     const { handleUserChoice } = props;
@@ -21,6 +23,12 @@ const Choices = (props) => {
                 </button>
                 <button className="scissors" onClick={() => handleUserChoice(3)}>
                     <Scissors />
+                </button>
+                <button className="lizard" onClick={() => handleUserChoice(4)}>
+                    <Lizard />
+                </button>
+                <button className="spock" onClick={() => handleUserChoice(5)}>
+                    <Spock />
                 </button>
             </div>
 
