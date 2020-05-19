@@ -5,7 +5,10 @@ The project was bootstrapped with [Create React App](https://github.com/facebook
 You can visit the GitHub project page [here](https://ioanacosmina.github.io/rock-paper-scissors/) to test the app or just clone the repository.
 
 ## Improvement ideas
+
 ✅ Add extra variables to the game to increase difficulty (e.g. Lizard, Spock)
+
+The winner is decided according to the following logic:
 
 --> Scissors cuts Paper
 --> Paper covers Rock
