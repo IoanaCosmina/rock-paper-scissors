@@ -5,9 +5,9 @@ import Paper from './icons/Paper';
 import Scissors from './icons/Scissors';
 
 const choices = [
-  { id: 1, name: 'rock', component: Rock },
-  { id: 2, name: 'paper', component: Paper },
-  { id: 3, name: 'scissors', component: Scissors }
+  { id: 1, name: 'rock', component: Rock, losesTo: 2 },
+  { id: 2, name: 'paper', component: Paper, losesTo: 3 },
+  { id: 3, name: 'scissors', component: Scissors, losesTo: 1 }
 ];
 
 function App() {
@@ -18,15 +18,29 @@ function App() {
   const [gameState, setGameState] = useState(null); // win, lose, draw
 
   useEffect(() => {
+    restartGame();
+  }, []);
+
+  function restartGame() {
+    setGameState(null);
+    setUserChoice(null);
     const randomChoice = choices[Math.floor(Math.random() * choices.length)];
     setComputerChoice(randomChoice);
-  }, []);
+  }
 
   function handleUserChoice(choice) {
     const currentChoice = choices.find(c => c.id === choice);
     setUserChoice(currentChoice);
 
-    setGameState('win');
+    if (currentChoice.losesTo === computerChoice.id) {
+      setLosses(losses => losses + 1);
+      setGameState('lose');
+    } else if (computerChoice.losesTo === currentChoice.id) {
+      setWins(wins => wins + 1);
+      setGameState('win');
+    } else if (computerChoice.id === currentChoice.id) {
+      setGameState('draw');
+    }
   };
 
   function renderComponent(choice) {
@@ -54,12 +68,14 @@ function App() {
 
       {
         gameState &&
-        <div className={`game-state ${gameState}`}>
+        <div onClick={() => restartGame()} className={`game-state ${gameState}`}>
           <div className="game-state-content">
             <p>{renderComponent(userChoice)}</p>
-            <p>You won!</p>
+            <p>You {gameState}!</p>
             <p>{renderComponent(computerChoice)}</p>
           </div>
+
+          <button onClick={() => restartGame()}>Play Again</button>
         </div>
       }
 
