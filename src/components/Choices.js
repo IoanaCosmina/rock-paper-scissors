@@ -10,10 +10,6 @@ const Choices = (props) => {
 
     return (
         <div className="choices">
-            <div>You</div>
-            <div />
-            <div>Computer</div>
-
             <div>
                 <button className="rock" onClick={() => handleUserChoice(1)}>
                     <Rock />
@@ -31,9 +27,9 @@ const Choices = (props) => {
                     <Spock />
                 </button>
             </div>
-
+            <div>You</div>
             <div className="vs">vs</div>
-
+            <div>Computer</div>
             <div>
                 <button className="computer-choice">?</button>
             </div>

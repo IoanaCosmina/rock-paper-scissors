@@ -44,6 +44,10 @@ h6 {
   text-align: center;
 }
 
+.info h2 em {
+  color: #fe4a49;
+}
+
 .wins-losses {
   display: flex;
   align-items: center;
@@ -80,7 +84,7 @@ h6 {
 
 .choices {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   text-align: center;
   row-gap: 30px;
   column-gap: 50px;
@@ -91,21 +95,21 @@ h6 {
 
 .choices > div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
 .vs {
-  font-size: 100px;
+  font-size: 75px;
   opacity: 0.3;
-  transform: rotate(-0.1turn);
+  padding-bottom: 10px;
   pointer-events: none;
 }
 
 .choices button {
   cursor: pointer;
-  margin-bottom: 25px;
+  margin: 15px 15px 25px;
   padding: 20px;
   background: #fff;
   outline: none;
@@ -130,12 +134,46 @@ h6 {
   background: #ffe74c;
 }
 
+.choices .rock img {
+  margin-left: 1px;
+  margin-top: 12px;
+}
+
 .choices .paper {
   background: #89b27a;
 }
 
+.choices .paper img {
+  margin-left: 8px;
+}
+
 .choices .scissors {
-  background: #99b7c1;
+  background: #383f39;
+}
+
+.choices .scissors img {
+  transform: rotate(25deg);
+  margin-left: -11px;
+  width: 150px;
+}
+
+.choices .lizard {
+  background: #ffc2b6;
+}
+
+.choices .lizard img {
+  margin-left: -11px;
+  width: 160px;
+}
+
+.choices .spock {
+  background: #c1c1c1;
+  max-height: 175px;
+  overflow: hidden;
+}
+
+.choices .spock img {
+  width: 115px;
 }
 
 .choices .computer-choice {

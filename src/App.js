@@ -54,7 +54,7 @@ function App() {
   return (
     <div className="app">
       <div className="info">
-        <h2>Rock. Paper. Scissors.</h2>
+        <h2>Rock. Paper. Scissors. <em>Lizard. Spock.</em></h2>
         <WinsLosses wins={wins} losses={losses} />
       </div>
 
