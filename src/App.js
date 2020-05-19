@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Rock from './icons/Rock';
+import Paper from './icons/Paper';
+import Scissors from './icons/Scissors';
 
 const choices = [
-  { id: 1, name: 'rock' },
-  { id: 2, name: 'paper' },
-  { id: 3, name: 'scissors' }
+  { id: 1, name: 'rock', component: Rock },
+  { id: 2, name: 'paper', component: Paper },
+  { id: 3, name: 'scissors', component: Scissors }
 ];
 
 function App() {
+  const [wins, setWins] = useState(0);
+  const [losses, setLosses] = useState(0);
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
+  const [gameState, setGameState] = useState(null); // win, lose, draw
 
   useEffect(() => {
     const randomChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -18,9 +24,15 @@ function App() {
 
   function handleUserChoice(choice) {
     const currentChoice = choices.find(c => c.id === choice);
-    console.log(currentChoice);
     setUserChoice(currentChoice);
+
+    setGameState('win');
   };
+
+  function renderComponent(choice) {
+    const Component = choice.component;
+    return <Component />
+  }
 
   return (
     <div className="app">
@@ -29,16 +41,27 @@ function App() {
 
         <div className="wins-losses">
           <div className="wins">
-            <span className="number">0</span>
-            <span className="text">Wins</span>
+            <span className="number">{wins}</span>
+            <span className="text">{wins === 1 ? 'Win' : 'Wins'}</span>
           </div>
 
           <div className="losses">
-            <span className="number">0</span>
-            <span className="text">Losses</span>
+            <span className="number">{losses}</span>
+            <span className="text">{losses === 1 ? 'Loss' : 'Losses'}</span>
           </div>
         </div>
       </div>
+
+      {
+        gameState &&
+        <div className={`game-state ${gameState}`}>
+          <div className="game-state-content">
+            <p>{renderComponent(userChoice)}</p>
+            <p>You won!</p>
+            <p>{renderComponent(computerChoice)}</p>
+          </div>
+        </div>
+      }
 
       <div className="choices">
         <div>You</div>
@@ -46,9 +69,15 @@ function App() {
         <div>Computer</div>
 
         <div>
-          <button className="rock" onClick={() => handleUserChoice(1)}></button>
-          <button className="paper" onClick={() => handleUserChoice(2)}></button>
-          <button className="scissors" onClick={() => handleUserChoice(3)}></button>
+          <button className="rock" onClick={() => handleUserChoice(1)}>
+            <Rock />
+          </button>
+          <button className="paper" onClick={() => handleUserChoice(2)}>
+            <Paper />
+          </button>
+          <button className="scissors" onClick={() => handleUserChoice(3)}>
+            <Scissors />
+          </button>
         </div>
 
         <div className="vs">vs</div>
