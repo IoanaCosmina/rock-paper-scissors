@@ -114,28 +114,20 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+.choices img {
+    width: 140px;
+}
+
 .choices .rock {
     background: #FFE74C;
-    background-image: url('./icons/rock.png');
-    background-size: 140px;
-    background-repeat: no-repeat;
-    background-position: 18px;
 }
 
 .choices .paper {
     background: #89B27A;
-    background-image: url('./icons/paper.png');
-    background-size: 140px;
-    background-repeat: no-repeat;
-    background-position: 20px;
 }
 
 .choices .scissors {
     background: #99B7C1;
-    background-image: url('./icons/scissors.png');
-    background-size: 140px;
-    background-repeat: no-repeat;
-    background-position: 22px;
 }
 
 .choices .computer-choice {
@@ -144,6 +136,75 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 65px;
 }
 
-.choices button object {
-    pointer-events: bounding-box;
+.game-state {
+    background: rgba(130, 108, 127, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1.3;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.game-state.win>div {
+    background: #70F8BA;
+    color: #4D3C6A;
+}
+
+.game-state.draw>div {
+    background: #392759;
+    color: #F5FBEF;
+}
+
+.game-state.lose>div {
+    background: #E2384A;
+    color: #F8A09A;
+}
+
+.game-state>div {
+    width: 60%;
+    text-align: center;
+    padding: 0 40px;
+    border-radius: 10px;
+    z-index: 1;
+    color: #fff;
+    font-size: 60px;
+}
+
+.game-state-content {
+    display: flex;
+    justify-content: center;
+}
+
+.game-state-content p {
+    margin: 40px 15px 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.game-state-content p:last-child {
+    margin-right: 0;
+}
+
+.game-state-content img {
+    width: 140px;
+}
+
+.game-state button {
+    margin-bottom: -5%;
+    width: 100%;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    flex-shrink: 1;
+    background: #FDFFFC;
+    color: #392759;
 }
